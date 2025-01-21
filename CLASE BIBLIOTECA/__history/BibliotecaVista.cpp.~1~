@@ -1,0 +1,65 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "BibliotecaVista.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+#include<Biblioteca.cpp>
+#include<Libro.cpp>
+TForm1 *Form1;
+Libro libro;
+Libro libroDos;
+Biblioteca biblioteca;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	Label1->Caption="Libro Guardado";
+
+	libro.setTitulo(LabeledEdit1->Text);
+	libro.setIsbn(LabeledEdit2->Text);
+	libro.setNumeroPaginas(StrToInt(LabeledEdit3->Text));
+	libro.setNumeroEdicion(StrToInt(LabeledEdit4->Text));
+	libro.setEditorial(LabeledEdit5->Text);
+	libro.setLugar(LabeledEdit6->Text);
+	libro.setCodigo(StrToInt(LabeledEdit7->Text));
+	libro.setYearEdicion(StrToInt(LabeledEdit8->Text));
+
+	biblioteca.añadirLibro(libro);
+}
+//---------------------------------------------------------------------------
+
+
+
+
+void __fastcall TForm1::Button3Click(TObject *Sender)
+{
+	libroDos=biblioteca.buscarPorTitulo(LabeledEdit17->Text);
+
+	LabeledEdit15->Text=librosDos.getIsbn();
+	LabeledEdit14->Text=librosDos.getNumeroPagina();
+	LabeledEdit13->Text=librosDos.getNumeroEdicion();
+	LabeledEdit12->Text=librosDos.getEditorial();
+	LabeledEdit11->Text=librosDos.getLugar();
+	LabeledEdit10->Text=librosDos.getCodigo();
+	LabeledEdit9->Text=librosDos.getYearEdicion();
+
+    String titulo;
+	String isbn;
+	int numeroPaginas;
+	int numeroEdicion;
+	String editorial;
+	String lugar;
+	int codigo;
+	int yearEdicion;
+
+}
+//---------------------------------------------------------------------------
+

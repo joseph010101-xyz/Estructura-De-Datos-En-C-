@@ -1,0 +1,89 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 442
+  ClientWidth = 628
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object Label1: TLabel
+    Left = 24
+    Top = 24
+    Width = 178
+    Height = 28
+    Caption = 'CLASE BIBLIOTECA'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold, fsItalic, fsUnderline]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 256
+    Top = 152
+    Width = 34
+    Height = 15
+    Caption = 'Label2'
+  end
+  object Label3: TLabel
+    Left = 264
+    Top = 168
+    Width = 35
+    Height = 15
+    Caption = 'Buscar'
+  end
+  object ListBoxLibros: TListBox
+    Left = 24
+    Top = 80
+    Width = 473
+    Height = 281
+    ItemHeight = 15
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 384
+    Top = 184
+    Width = 89
+    Height = 25
+    Caption = 'Buscar Titulo'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 384
+    Top = 143
+    Width = 89
+    Height = 25
+    Caption = 'A'#241'adir'
+    TabOrder = 2
+    OnClick = Button2Click
+  end
+  object EditAutor: TEdit
+    Left = 64
+    Top = 208
+    Width = 121
+    Height = 23
+    ImeName = 'Edit'
+    TabOrder = 3
+  end
+  object EditTitulo: TEdit
+    Left = 64
+    Top = 144
+    Width = 121
+    Height = 23
+    TabOrder = 4
+  end
+  object EditIsbn: TEdit
+    Left = 64
+    Top = 264
+    Width = 121
+    Height = 23
+    TabOrder = 5
+  end
+end

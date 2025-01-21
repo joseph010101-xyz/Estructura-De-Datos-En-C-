@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/10/16 15:41:09.000.900,=C:\Users\flore\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2024/10/16 15:41:09.000.854,=C:\Users\flore\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2024/10/16 15:41:15.000.131,=C:\Users\flore\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>2024/10/16 17:04:54.000.436,C:\Users\flore\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.h=C:\Users\flore\OneDrive\Documentos\Embarcadero\Studio\Projects\UFecha.h</Transaction>
+    <Transaction>2024/10/16 17:04:54.000.436,C:\Users\flore\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.cpp=C:\Users\flore\OneDrive\Documentos\Embarcadero\Studio\Projects\UFecha.cpp</Transaction>
+    <Transaction>2024/10/16 17:05:23.000.136,C:\Users\flore\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.cpp=C:\Users\flore\OneDrive\Documentos\Embarcadero\Studio\Projects\UPrincipal.cpp</Transaction>
+    <Transaction>2024/10/16 17:05:23.000.136,C:\Users\flore\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.h=C:\Users\flore\OneDrive\Documentos\Embarcadero\Studio\Projects\UPrincipal.h</Transaction>
+    <Transaction>2024/10/16 17:05:23.000.136,C:\Users\flore\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\flore\OneDrive\Documentos\Embarcadero\Studio\Projects\UPrincipal.dfm</Transaction>
+    <Transaction>2024/10/16 17:18:20.000.192,C:\Users\flore\OneDrive\Documentos\Embarcadero\Studio\Projects\UPrincipal.cpp=C:\Users\flore\OneDrive\Escritorio\Joseph Flores Garcia\CLASE FECHA\UPrincipal.cpp</Transaction>
+    <Transaction>2024/10/16 17:18:20.000.286,C:\Users\flore\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.cbproj=C:\Users\flore\OneDrive\Escritorio\Joseph Flores Garcia\CLASE FECHA\Project1.cbproj</Transaction>
+    <Transaction>2024/10/16 17:18:20.000.145,C:\Users\flore\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1PCH1.h=C:\Users\flore\OneDrive\Escritorio\Joseph Flores Garcia\CLASE FECHA\Project1PCH1.h</Transaction>
+    <Transaction>2024/10/16 17:18:20.000.240,C:\Users\flore\OneDrive\Documentos\Embarcadero\Studio\Projects\UFecha.cpp=C:\Users\flore\OneDrive\Escritorio\Joseph Flores Garcia\CLASE FECHA\UFecha.cpp</Transaction>
+    <Transaction>2024/10/16 17:18:20.000.240,C:\Users\flore\OneDrive\Documentos\Embarcadero\Studio\Projects\UFecha.h=C:\Users\flore\OneDrive\Escritorio\Joseph Flores Garcia\CLASE FECHA\UFecha.h</Transaction>
+    <Transaction>2024/10/16 17:18:20.000.192,C:\Users\flore\OneDrive\Documentos\Embarcadero\Studio\Projects\UPrincipal.dfm=C:\Users\flore\OneDrive\Escritorio\Joseph Flores Garcia\CLASE FECHA\UPrincipal.dfm</Transaction>
+    <Transaction>2024/10/16 17:18:20.000.192,C:\Users\flore\OneDrive\Documentos\Embarcadero\Studio\Projects\UPrincipal.h=C:\Users\flore\OneDrive\Escritorio\Joseph Flores Garcia\CLASE FECHA\UPrincipal.h</Transaction>
+  </Transactions>
+</BorlandProject>

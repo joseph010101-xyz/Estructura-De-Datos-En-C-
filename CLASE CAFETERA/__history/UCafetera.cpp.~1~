@@ -1,0 +1,63 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "UCafetera.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+Ccafetera::Ccafetera(){
+	cafetera=0;
+}
+
+Ccafetera Ccafetera::CafeteraMAX(){
+	CapacidadMAX=1000;
+}
+
+Ccafetera Ccafetera::CafeteraMAXyACTUAL(){
+	if (CapacidadMAX>=1000) {
+		CapacidadMAX=1000;
+	}
+}
+
+int Ccafetera::LlenarCafetera(){
+	int llenar=1000;
+	int lleno=0;
+	if (cafetera==0) {
+		cafetera+=llenar;
+		lleno=llenar;
+	}
+	return lleno;
+}
+
+int Ccafetera::ServirTaza(int taza){
+	int actual=CapacidadMAX;
+	int x=taza;int tazza=250;
+	for (int i=0; i <x; i++) {
+		actual-=tazza;
+		if (actual>=0) {
+		}else{
+			return actual;
+		 }
+	}
+}
+
+int Ccafetera::VaciarCafetera(){
+	CantidadActual=0;
+	return CantidadActual;
+}
+
+int Ccafetera::AgregarCafe(int agregar){
+	int resultado=-999;
+	if (agregar>=0 && agregar<=1000) {
+		resultado=agregar;
+	}else{
+		ShowMessage("La cantidad que intentas agregar no esta dentro del rango de la cafetera");
+	}
+	return resultado;
+}
+
+int Ccafetera::Imprimir(){
+	return cafetera;
+	return CapacidadMAX;
+	return CantidadActual;
+}

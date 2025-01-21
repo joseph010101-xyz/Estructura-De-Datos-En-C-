@@ -1,0 +1,75 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+#include <string>
+#include <vector>
+#include <fstream>
+#include "UBiblioteca.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+Libro::Libro(String _Titulo,String _Autor,String _Isbn,String _LugarEdicion,String _Editorial,String _Estado,String _FechaDevolucion,int _NumEdicion,int _NumPaginas,int _Codigo,int _AñoEdicion) : Titulo(_Titulo),Autor(_Autor),Isbn(_Isbn),Editorial(_Editorial),LugarEdicion(_LugarEdicion),NumEdicion(_NumEdicion),NumPaginas(_NumPaginas),Codigo(_Codigo),AñoEdicion(_AñoEdicion),Estado(_Estado) {
+
+}
+String Libro::GetTitulo(){    ////
+	return Titulo;
+}
+String Libro::GetAutor(){     ////
+	return Autor;
+}
+String Libro::GetIsbn(){      ////
+	return Isbn;
+}
+int Libro::GetCodigo(){        /////
+	return Codigo;
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+/*void SetTitulo(String titulo){
+	Titulo=titulo;
+}
+void SetAutor(String autor){
+	Autor=autor;
+}
+void SetIsbn(String isbn){
+	Isbn=isbn;
+}
+void SetCodigo(String codigo){
+	Codigo=codigo;
+}  */
+/////////////////////////////////////////////////////////////////////////////////////////////////
+String Libro::GetEstado(){
+	return Estado;
+}
+String Libro::GetFechaDevolucion(){
+	return Fechadevolucion;
+}
+void SetEstado(String _Estado){
+	Estado=_Estado;
+}
+void SetFechaDevolucion(String _fecha){
+	FechaDevolucion=_fecha;
+}
+void AñadirLibro(Libro libro){
+
+}
+Libro BuscarPorTitulo(String titulo){
+}
+Libro BuscarPorAutor(String autor){
+}
+Libro BuscarPorCodigo(String codigo){
+}
+
+bool Prestar(int codigo,String fechaDevolucion){
+}
+bool Devolver(int codigo){
+}
+bool Reservar(int codigo){
+}
+bool DarDeBaja(int codigo){
+}
+
+void GuardarEnDisco(String archivo){
+}
+void CargarDesdeDisco(String archivo){
+}
+
+

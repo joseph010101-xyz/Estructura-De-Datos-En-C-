@@ -1,0 +1,72 @@
+//---------------------------------------------------------------------------
+
+#ifndef UBibliotecaH
+#define UBibliotecaH
+
+#include <string>
+#include <vector>
+#include <fstream>
+#include <stdexcept> // Para manejar las excepciones
+
+using namespace std;
+
+//---------------------------------------------------------------------------
+
+// Clase Libro
+class Libro {
+private:
+    string Titulo;
+    string Autor;
+    string Isbn;
+    string Editorial;
+    string LugarEdicion;
+    string Estado;
+    string FechaDevolucion;
+    int NumEdicion;
+    int NumPaginas;
+    int Codigo;
+    int AñoEdicion;
+
+public:
+    // Constructor
+    Libro(string _Titulo, string _Autor, string _Isbn, string _Editorial,
+          string _LugarEdicion, string _Estado, string _FechaDevolucion,
+          int _NumEdicion, int _NumPaginas, int _Codigo, int _AñoEdicion);
+
+    // Métodos Getters
+    string GetTitulo();
+    string GetAutor();
+    string GetIsbn();
+    int GetCodigo();
+    string GetEstado();
+    string GetFechaDevolucion();
+
+    // Métodos Setters
+    void SetEstado(string _Estado);
+    void SetFechaDevolucion(string _fecha);
+};
+
+// Clase Biblioteca
+class Biblioteca {
+private:
+    vector<Libro> libros; // Vector para almacenar los libros
+
+public:
+    // Métodos para gestionar la biblioteca
+    void AñadirLibro(Libro libro);
+    Libro BuscarPorTitulo(string titulo);
+    Libro BuscarPorAutor(string autor);
+    Libro BuscarPorCodigo(int codigo);
+
+    bool Prestar(int codigo, string fechaDevolucion);
+    bool Devolver(int codigo);
+    bool Reservar(int codigo);
+    bool DarDeBaja(int codigo);
+
+    // Métodos para manejar la persistencia en disco
+    void GuardarEnDisco(string archivo);
+    void CargarDesdeDisco(string archivo);
+};
+
+#endif
+//---------------------------------------------------------------------------

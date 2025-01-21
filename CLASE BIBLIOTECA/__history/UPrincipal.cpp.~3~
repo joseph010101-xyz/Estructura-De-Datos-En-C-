@@ -1,0 +1,46 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "UPrincipal.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+Libro libr;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	String tituloBuscado=EditTitulo->Text.c_str();
+	try{
+		Libro libroEncontrado=miBiblioteca.BuscarPorTitulo(IntToStr(tituloBuscado));
+		ListBoxLibros->Items->Add(AnsiString("Libro encontrado:"+libroEncontrado.GetTitulo().c_str()));
+	}catch(const std::runtime_error& e){
+		ShowMessage("Libro encontrado.");
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+    Label1->Caption="Libro Guardado";
+	libro.setTitulo(LabeledEdit1->Text);
+	libro.setIsbn(LabeledEdit2->Text);
+	libro.setNumeroPaginas(StrToInt(LabeledEdit3->Text));
+	libro.setNumeroEdicion(StrToInt(LabeledEdit4->Text));
+	libro.setEditorial(LabeledEdit5->Text);
+	libro.setLugar(LabeledEdit6->Text);
+	libro.setCodigo(StrToInt(LabeledEdit7->Text));
+	libro.setYearEdicion(StrToInt(LabeledEdit8->Text));
+
+	biblioteca.añadirLibro(libro);
+}
+//---------------------------------------------------------------------------
+

@@ -1,0 +1,54 @@
+//---------------------------------------------------------------------------
+#ifndef BibliotecaH
+#define BibliotecaH
+
+#include <string>
+#include <vector>
+#include <fstream>
+#include <stdexcept> // Para manejar las excepciones
+#include "Libro.h"
+#include<Libro.cpp>
+using namespace std;
+
+//---------------------------------------------------------------------------
+class Biblioteca{
+	private:
+	vector<Libro> libros;
+
+
+	public:
+
+	void añadirLibro(Libro libro) {
+	libros.push_back(libro); // Agregar libro al vector de libros}
+	}
+
+	Libro buscarPorTitulo(String titulo) {
+	for (auto &libro : libros) {
+		if (libro.getTitulo() == titulo) {
+			return libro;
+		}
+	}
+	// Aquí puedes lanzar una excepción si no se encuentra el libro
+	throw runtime_error("Libro no encontrado por título");
+	}
+	Libro buscarPorAutor(String autor) {
+	for (auto &libro : libros) {
+		if (libro.getAutor() == autor) {
+			return libro;
+		}
+	}
+	// Aquí puedes lanzar una excepción si no se encuentra el libro
+	throw runtime_error("Libro no encontrado por autor");
+	}
+	Libro buscarPorCodigo(String codigo) {
+	for (auto &libro : libros) {
+		if (libro.getCodigo() == codigo) {
+			return libro;
+		}
+	}
+	// Aquí puedes lanzar una excepción si no se encuentra el libro
+	throw runtime_error("Libro no encontrado por codigo");
+	}
+
+};
+#endif

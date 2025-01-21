@@ -1,0 +1,96 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+#include <string>
+#include "UFecha.h"
+//---------------------------------------------------------------------------
+ CFecha::CFecha(){
+	Dia=1;
+	Mes=1;
+	Año=1900;
+}
+CFecha::CFecha(int Dia,int Mes,int Año){
+	this->Dia=Dia;
+	this->Mes=Mes;
+	this->Año=Año;
+}
+void CFecha::SetDia(int dia){
+	if (dia>0 && dia<=31) {
+		Dia=dia;
+	}else{
+		ShowMessage("No Esta Dentro Del Rango De los Dias Del Mes");
+	}
+}
+void CFecha::SetMes(int mes){
+	if (mes>0 && mes<=12){
+		Mes=mes;
+	}else{
+		ShowMessage("No Esta Dentro Del Rango De los Meses Del Año");
+	}
+}
+void CFecha::SetAño(int año){
+	if (año>=1900 && año<=2050 ) {
+		Año=año;
+	}else{
+		ShowMessage("No esta dentro del rango ");
+	}
+}
+int CFecha::GetDia(){
+	return Dia;
+}
+int CFecha::GetMes(){
+	return Mes;
+}
+int CFecha::GetAño(){
+    return Año;
+}
+String CFecha::EsBisiesto(){
+	bool esbisiesto=((GetAño() % 4 ==0 && GetAño() % 100 !=0) || (GetAño() % 400==0));
+	String resultado;
+	(esbisiesto)?resultado="Es Bisiesto":resultado="No Es Bisiesto";
+	return resultado;
+}
+int CFecha::DiasMes(int mes){
+	const int DiasPorMes[]={31,28,31,30,31,30,31,31,30,31,30,31};
+	bool esbisiesto=((GetAño() % 4 ==0 && GetAño() % 100 !=0) || (GetAño() % 400==0));
+	if (mes>12 && mes<1) {
+		ShowMessage("El Mes Ingresado No Existe");
+	}
+	if (mes==2) {
+		return esbisiesto ? 29 : 28;
+	}else{
+		return DiasPorMes[mes -1];
+	}
+}
+String CFecha::Corto(){
+	String resultado;
+	resultado=IntToStr(GetAño())+"-"+IntToStr(GetMes())+"-"+IntToStr(GetDia());
+	return resultado;
+}
+String DiasTranscurridos(CFecha fecha,CFecha fechaDos){
+	int añoMayor, añoMenor, año, mes, dia;
+	int mesResta, diaResta;
+	if (fecha.GetAño() > fechaDos.GetAño()) {
+		añoMayor = fecha.GetAño();
+		añoMenor = fechaDos.GetAño();
+	} else {
+		añoMayor = fechaDos.GetAño();
+		añoMenor = fecha.GetAño();
+	}
+	año = añoMayor - añoMenor;
+	mesResta = abs(fecha.GetMes()-fechaDos.GetMes());
+	diaResta = abs(fecha.GetDia()- fechaDos.GetDia());
+	mes = año * 12 + mesResta;
+	if (fecha.GetDia()< fechaDos.GetDia()){
+		mes--;
+		dia = 30 - diaResta;
+	} else {
+		dia = diaResta;
+	}
+	int diasTotales = año * 365 + mes * 30 + dia;
+	String mensaje = IntToStr(año) + " años, " + IntToStr(mes) + " meses, " + IntToStr(dia) + " días";
+	return mensaje;
+}
+
+
+

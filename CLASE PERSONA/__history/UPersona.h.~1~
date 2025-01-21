@@ -1,0 +1,18 @@
+//---------------------------------------------------------------------------
+
+#ifndef UPersonaH
+#define UPersonaH
+#include <String>
+//---------------------------------------------------------------------------
+class CPersona{
+	private:
+		String Nombre;
+		String FechaDeNacimiento;
+		String LugarDeNacimiento;
+		int CI;
+
+
+	public:
+
+};
+#endif

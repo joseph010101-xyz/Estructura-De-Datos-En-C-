@@ -1,0 +1,153 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "UBiblioteca.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+
+// Constructor de la clase Libro
+Libro::Libro(string _Titulo, string _Autor, string _Isbn, string _Editorial,
+             string _LugarEdicion, string _Estado, string _FechaDevolucion,
+             int _NumEdicion, int _NumPaginas, int _Codigo, int _AñoEdicion)
+    : Titulo(_Titulo), Autor(_Autor), Isbn(_Isbn), Editorial(_Editorial),
+      LugarEdicion(_LugarEdicion), Estado(_Estado), FechaDevolucion(_FechaDevolucion),
+      NumEdicion(_NumEdicion), NumPaginas(_NumPaginas), Codigo(_Codigo),
+      AñoEdicion(_AñoEdicion) {
+}
+
+// Implementación de los métodos de la clase Libro
+string Libro::GetTitulo() {
+    return Titulo;
+}
+
+string Libro::GetAutor() {
+    return Autor;
+}
+
+string Libro::GetIsbn() {
+    return Isbn;
+}
+
+int Libro::GetCodigo() {
+    return Codigo;
+}
+
+string Libro::GetEstado() {
+    return Estado;
+}
+
+string Libro::GetFechaDevolucion() {
+    return FechaDevolucion;
+}
+
+void Libro::SetEstado(string _Estado) {
+    Estado = _Estado;
+}
+
+void Libro::SetFechaDevolucion(string _fecha) {
+    FechaDevolucion = _fecha;
+}
+
+// Métodos de la clase Biblioteca
+
+// Añadir un libro a la colección
+void Biblioteca::AñadirLibro(Libro libro) {
+    libros.push_back(libro); // Agregar libro al vector de libros
+}
+
+// Buscar un libro por el título
+Libro Biblioteca::BuscarPorTitulo(string titulo) {
+    for (auto &libro : libros) {
+        if (libro.GetTitulo() == titulo) {
+            return libro;
+        }
+    }
+    // Aquí puedes lanzar una excepción si no se encuentra el libro
+    throw runtime_error("Libro no encontrado por título");
+}
+
+// Buscar un libro por el autor
+Libro Biblioteca::BuscarPorAutor(string autor) {
+    for (auto &libro : libros) {
+        if (libro.GetAutor() == autor) {
+            return libro;
+        }
+    }
+    throw runtime_error("Libro no encontrado por autor");
+}
+
+// Buscar un libro por el código
+Libro Biblioteca::BuscarPorCodigo(int codigo) {
+    for (auto &libro : libros) {
+        if (libro.GetCodigo() == codigo) {
+            return libro;
+        }
+    }
+    throw runtime_error("Libro no encontrado por código");
+}
+
+// Prestar un libro
+bool Biblioteca::Prestar(int codigo, string fechaDevolucion) {
+    for (auto &libro : libros) {
+        if (libro.GetCodigo() == codigo && libro.GetEstado() == "disponible") {
+            libro.SetEstado("prestado");
+            libro.SetFechaDevolucion(fechaDevolucion);
+            return true;
+        }
+    }
+    return false; // No se pudo prestar el libro
+}
+
+// Devolver un libro
+bool Biblioteca::Devolver(int codigo) {
+    for (auto &libro : libros) {
+        if (libro.GetCodigo() == codigo && libro.GetEstado() == "prestado") {
+            libro.SetEstado("disponible");
+            libro.SetFechaDevolucion("");
+            return true;
+        }
+    }
+    return false; // No se pudo devolver el libro
+}
+
+// Reservar un libro
+bool Biblioteca::Reservar(int codigo) {
+    for (auto &libro : libros) {
+        if (libro.GetCodigo() == codigo && libro.GetEstado() == "disponible") {
+            libro.SetEstado("reservado");
+            return true;
+        }
+    }
+    return false; // No se pudo reservar el libro
+}
+
+// Dar de baja un libro (eliminarlo de la colección)
+bool Biblioteca::DarDeBaja(int codigo) {
+    for (auto it = libros.begin(); it != libros.end(); ++it) {
+        if (it->GetCodigo() == codigo) {
+            libros.erase(it); // Eliminar el libro del vector
+            return true;
+        }
+    }
+    return false; // No se pudo dar de baja el libro
+}
+
+// Guardar la colección de libros en disco
+void Biblioteca::GuardarEnDisco(string archivo) {
+    ofstream outFile(archivo, ios::binary);
+    for (auto &libro : libros) {
+        outFile.write(reinterpret_cast<const char*>(&libro), sizeof(Libro));
+    }
+    outFile.close();
+}
+
+// Cargar la colección de libros desde disco
+void Biblioteca::CargarDesdeDisco(string archivo) {
+    ifstream inFile(archivo, ios::binary);
+    Libro libro("", "", "", "", "", "", "", 0, 0, 0, 0);
+    while (inFile.read(reinterpret_cast<char*>(&libro), sizeof(Libro))) {
+        libros.push_back(libro);
+    }
+    inFile.close();
+}

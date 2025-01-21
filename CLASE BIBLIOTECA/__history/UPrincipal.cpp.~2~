@@ -1,0 +1,46 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "UPrincipal.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+	String titulo =EditTitulo->Text.c_str();
+	String autor =EditAutor->Text.c_str();
+	String isbn =EditIsbn->Text.c_str();
+
+	Libro nuevoLibro(titulo, autor, isbn,"Editorial XYZ","Lugar XYZ","disponible","",1,300,rand(),2024);
+
+	miBiblioteca.AñadirLibro(nuevoLibro);
+
+	ListBoxLibros->Items->Add(titulo);
+	EditTitulo->Text="";
+	EditAutor->Text="";
+	EditIsbn->Text="";
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	String tituloBuscado=EditTitulo->Text;
+	try{
+		Libro libroEncontrado=miBiblioteca.BuscarPorTitulo(tituloBuscado);
+
+		ListBoxLibros->Items->Add("Libro encontrado:"+libroEncontrado.GetTitulo());
+	}catch (const std::runtime_error& e){
+		ShowMessage("Libro no encontrado.");
+	}
+}
+//---------------------------------------------------------------------------
+

@@ -1,0 +1,36 @@
+//---------------------------------------------------------------------------
+
+#ifndef UFechaH
+#define UFechaH
+//---------------------------------------------------------------------------
+class CFecha{
+	private:
+		int Dia;
+		int Mes;
+		int Año;
+		bool Valida();
+
+	public:
+		CFecha();
+		CFecha(int d,int m,int a);
+		void SetDia(int dia);
+		void SetMes(int mes);
+		void SetAño(int año);
+		int GetDia();
+		int GetMes();
+		int GetAño();
+		String EsBisiesto();
+		int DiasMes(int mes);
+		String Corto();
+		String DiasTranscurridos(CFecha fecha,CFecha fechaDos);
+		bool AñoBisiesto(int año);
+		int DiaSemana();
+		String Largo();
+		String EstacionDelAño();
+		int DiasEntre(CFecha otraFecha);
+		int convertirADias();
+		void siguiente();
+		void anterior();
+		CFecha Copia();
+};
+#endif

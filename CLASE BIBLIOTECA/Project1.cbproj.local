@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/10/18 18:24:16.000.887,=C:\Users\hp\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2024/10/18 18:24:16.000.820,=C:\Users\hp\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2024/10/18 18:24:39.000.308,=C:\Users\hp\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>2024/10/18 18:24:50.000.471,=C:\Users\hp\Documents\Embarcadero\Studio\Projects\Unit3.cpp</Transaction>
+    <Transaction>2024/10/18 21:11:41.000.018,C:\Users\hp\Documents\Embarcadero\Studio\Projects\BibliotecaVista.dfm=C:\Users\hp\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2024/10/18 21:11:41.000.018,C:\Users\hp\Documents\Embarcadero\Studio\Projects\BibliotecaVista.h=C:\Users\hp\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>2024/10/18 21:11:41.000.018,C:\Users\hp\Documents\Embarcadero\Studio\Projects\BibliotecaVista.cpp=C:\Users\hp\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2024/10/18 21:12:04.000.426,C:\Users\hp\Documents\Embarcadero\Studio\Projects\Biblioteca.h=C:\Users\hp\Documents\Embarcadero\Studio\Projects\Unit2.h</Transaction>
+    <Transaction>2024/10/18 21:12:04.000.426,C:\Users\hp\Documents\Embarcadero\Studio\Projects\Biblioteca.cpp=C:\Users\hp\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>2024/10/18 21:12:18.000.912,C:\Users\hp\Documents\Embarcadero\Studio\Projects\Libro.h=C:\Users\hp\Documents\Embarcadero\Studio\Projects\Unit3.h</Transaction>
+    <Transaction>2024/10/18 21:12:18.000.912,C:\Users\hp\Documents\Embarcadero\Studio\Projects\Libro.cpp=C:\Users\hp\Documents\Embarcadero\Studio\Projects\Unit3.cpp</Transaction>
+    <Transaction>2024/10/18 21:26:07.000.963,C:\Users\hp\Desktop\TareaUniversidad\EstructuraDeDatos\Eduardo David Lucas Choque\Class Biblioteca\BibliotecaVista.cpp=C:\Users\hp\Documents\Embarcadero\Studio\Projects\BibliotecaVista.cpp</Transaction>
+    <Transaction>2024/10/18 21:26:07.000.963,C:\Users\hp\Desktop\TareaUniversidad\EstructuraDeDatos\Eduardo David Lucas Choque\Class Biblioteca\BibliotecaVista.dfm=C:\Users\hp\Documents\Embarcadero\Studio\Projects\BibliotecaVista.dfm</Transaction>
+    <Transaction>2024/10/18 21:26:07.000.963,C:\Users\hp\Desktop\TareaUniversidad\EstructuraDeDatos\Eduardo David Lucas Choque\Class Biblioteca\BibliotecaVista.h=C:\Users\hp\Documents\Embarcadero\Studio\Projects\BibliotecaVista.h</Transaction>
+    <Transaction>2024/10/18 21:26:08.000.120,C:\Users\hp\Desktop\TareaUniversidad\EstructuraDeDatos\Eduardo David Lucas Choque\Class Biblioteca\Project1.cbproj=C:\Users\hp\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>2024/10/18 21:26:08.000.105,C:\Users\hp\Desktop\TareaUniversidad\EstructuraDeDatos\Eduardo David Lucas Choque\Class Biblioteca\Libro.h=C:\Users\hp\Documents\Embarcadero\Studio\Projects\Libro.h</Transaction>
+    <Transaction>2024/10/18 21:26:08.000.105,C:\Users\hp\Desktop\TareaUniversidad\EstructuraDeDatos\Eduardo David Lucas Choque\Class Biblioteca\Libro.cpp=C:\Users\hp\Documents\Embarcadero\Studio\Projects\Libro.cpp</Transaction>
+    <Transaction>2024/10/18 21:26:08.000.025,C:\Users\hp\Desktop\TareaUniversidad\EstructuraDeDatos\Eduardo David Lucas Choque\Class Biblioteca\Biblioteca.h=C:\Users\hp\Documents\Embarcadero\Studio\Projects\Biblioteca.h</Transaction>
+    <Transaction>2024/10/18 21:26:08.000.025,C:\Users\hp\Desktop\TareaUniversidad\EstructuraDeDatos\Eduardo David Lucas Choque\Class Biblioteca\Biblioteca.cpp=C:\Users\hp\Documents\Embarcadero\Studio\Projects\Biblioteca.cpp</Transaction>
+  </Transactions>
+</BorlandProject>

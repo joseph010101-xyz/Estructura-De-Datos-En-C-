@@ -1,0 +1,96 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "BibliotecaVista.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+#include<Biblioteca.cpp>
+#include<Libro.cpp>
+TForm1 *Form1;
+Libro libro;
+Libro libroDos;
+Biblioteca biblioteca;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	Label1->Caption="Libro Guardado";
+
+	libro.setTitulo(LabeledEdit1->Text);
+	libro.setIsbn(LabeledEdit2->Text);
+	libro.setNumeroPaginas(StrToInt(LabeledEdit3->Text));
+	libro.setNumeroEdicion(StrToInt(LabeledEdit4->Text));
+	libro.setEditorial(LabeledEdit5->Text);
+	libro.setLugar(LabeledEdit6->Text);
+	libro.setCodigo(StrToInt(LabeledEdit7->Text));
+	libro.setYearEdicion(StrToInt(LabeledEdit8->Text));
+	libro.setAutor(LabeledEdit18->Text);
+
+	biblioteca.añadirLibro(libro);
+}
+//---------------------------------------------------------------------------
+
+
+
+
+void __fastcall TForm1::Button3Click(TObject *Sender)
+{
+	libroDos=biblioteca.buscarPorTitulo(LabeledEdit17->Text);
+
+	LabeledEdit15->Text=libroDos.getIsbn();
+	LabeledEdit14->Text=libroDos.getNumeroPaginas();
+	LabeledEdit13->Text=libroDos.getNumeroEdicion();
+	LabeledEdit12->Text=libroDos.getEditorial();
+	LabeledEdit11->Text=libroDos.getLugar();
+	LabeledEdit10->Text=libroDos.getCodigo();
+	LabeledEdit9->Text=libroDos.getYearEdicion();
+	LabeledEdit18->Text=libroDos.getAutor();
+
+	String titulo;
+	String isbn;
+	int numeroPaginas;
+	int numeroEdicion;
+	String editorial;
+	String lugar;
+	int codigo;
+	int yearEdicion;
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+	libroDos=biblioteca.buscarPorAutor(LabeledEdit19->Text);
+	LabeledEdit21->Text=libroDos.getIsbn();
+	LabeledEdit22->Text=libroDos.getNumeroPaginas();
+	LabeledEdit23->Text=libroDos.getNumeroEdicion();
+	LabeledEdit24->Text=libroDos.getEditorial();
+	LabeledEdit25->Text=libroDos.getLugar();
+	LabeledEdit27->Text=libroDos.getCodigo();
+	LabeledEdit26->Text=libroDos.getYearEdicion();
+	LabeledEdit20->Text=libroDos.getTitulo();
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::Button4Click(TObject *Sender)
+{
+	libroDos=biblioteca.buscarPorCodigo(LabeledEdit33->Text);
+	LabeledEdit35->Text=libroDos.getIsbn();
+	LabeledEdit34->Text=libroDos.getNumeroPaginas();
+	LabeledEdit29->Text=libroDos.getNumeroEdicion();
+	LabeledEdit32->Text=libroDos.getEditorial();
+	LabeledEdit31->Text=libroDos.getLugar();
+	LabeledEdit28->Text=libroDos.getAutor();
+	LabeledEdit30->Text=libroDos.getYearEdicion();
+	LabeledEdit36->Text=libroDos.getTitulo();
+}
+//---------------------------------------------------------------------------
+

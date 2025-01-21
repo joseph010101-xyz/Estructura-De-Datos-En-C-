@@ -1,0 +1,32 @@
+//---------------------------------------------------------------------------
+
+#ifndef UBibliotecaH
+#define UBibliotecaH
+#include <string>
+#include <vector>
+#include <fstream>
+//---------------------------------------------------------------------------
+class Libro{
+	private :
+		String Titulo;
+		String Autor;
+		String Isbn;
+		String LugarEdicion;
+		String Estado;
+		String FechaDevolucion;
+		int NumEdicion;
+		int NumPaginas;
+		int Codigo;
+		int AñoEdicion;
+	public :
+		Libro(String _Titulo,String _Autor,String _Isbn,String _LugarEdicion,String _Estado,String _FechaDevolucion,int _NumEdicion,int _NumPaginas,int _Codigo,int _AñoEdicion);
+		String GetTitulo();
+		String GetAutor();
+		String GetIsbn();
+		int GetCodigo();
+		String GetEstado();
+		String GetFechaDevolucion();
+		void SetEstado(String _Estado);
+		void SetFechaDevolucion(String _fecha);
+};
+#endif

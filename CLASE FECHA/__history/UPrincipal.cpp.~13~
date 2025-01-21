@@ -1,0 +1,94 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "UPrincipal.h"
+#include "UFecha.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+CFecha *fecha;
+CFecha *fechaDos;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+	fecha=new CFecha();
+	fechaDos=new CFecha();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	fecha->SetDia(StrToInt(EditDia->Text));
+	fecha->SetMes(StrToInt(EditMes->Text));
+	fecha->SetAño(StrToInt(EditAño->Text));
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+	EResultado->Text=fecha->EsBisiesto();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button3Click(TObject *Sender)
+{
+	EResultado->Text=fecha->DiasMes(StrToInt(EMes->Text));
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button4Click(TObject *Sender)
+{
+	ECorto->Text=fecha->Corto();
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::Button5Click(TObject *Sender)
+{
+	fecha->SetAño(StrToInt(EAño1->Text));
+	fecha->SetMes(StrToInt(EMes1->Text));
+	fecha->SetDia(StrToInt(EDia1->Text));
+}
+//--------------------------------------------------------------------------
+
+
+void __fastcall TForm1::Button6Click(TObject *Sender)
+{
+	fechaDos->SetAño(StrToInt(EAño2->Text));
+	fechaDos->SetMes(StrToInt(EMes2->Text));
+	fechaDos->SetDia(StrToInt(EDia2->Text));
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button7Click(TObject *Sender)
+{
+	ETranscurrido->Text=fecha->DiasTranscurridos(*fecha,*fechaDos);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button8Click(TObject *Sender)
+{
+    EResultado->Text=fecha->AñoBisiesto(StrToInt(EAñoBisiesto->Text));
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button9Click(TObject *Sender)
+{
+	int DiaSemana=fecha->DiaSemana();
+	String dias[7]={"domingo","lunes","martes","miercoles","jueves","viernes","sabado"};
+	EResultado->Text=dias[DiaSemana];
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button10Click(TObject *Sender)
+{
+    EResultado->Text=fecha->Largo();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button11Click(TObject *Sender)
+{
+    EResultado->Text=fecha->EstacionDelAño();
+}
+//---------------------------------------------------------------------------
+
