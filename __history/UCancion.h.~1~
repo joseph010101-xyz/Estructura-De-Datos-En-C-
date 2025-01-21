@@ -1,4 +1,4 @@
-ï»¿//---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 
 #ifndef UCancionH
 #define UCancionH
@@ -9,18 +9,18 @@ class Ccancion{
         String Cancion;
 		String NombreCancion;
 		String Autor;
-		int AÃ±o;
+		int Año;
 		String Genero;
 	public:
-		Ccancion();
-		//String Cancion(String Nombrecancion,String autor,int aÃ±o,String genero);
+		String Ccancion();
+		//String Cancion(String Nombrecancion,String autor,int año,String genero);
 		String ModificarNombreCancion(String Nombrecancion);
 		String ModificarAutor(String autor);
-		int ModificarAÃ±o(int aÃ±o);
+		int ModificarAño(int año);
 		String ModificarGenero(String genero);
 		String ImprimirCancion();
 		String ImprimirAutor();
-		int ImprimirAÃ±o();
+		int ImprimirAño();
 		String ImprimirGenero();
 };
 #endif

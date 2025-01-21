@@ -45,6 +45,3 @@ int Ccancion::ImprimirAño(){
 String Ccancion::ImprimirGenero(){
 	return Genero;
 }
-
-
-////////////Joseph Flores Garcia///////////////
